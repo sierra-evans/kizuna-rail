@@ -417,3 +417,54 @@ article.confirmation-page {
         }
     }
 }
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    article.confirmation-page, 
+    article.confirmation-page * {
+        visibility: visible;
+    }
+
+    article.confirmation-page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px !important;
+        box-sizing: border-box;
+        background: white;
+    }
+
+    .confirmation-actions,
+    .next-steps,
+    .important-info,
+    .passengers-info {
+        display: none !important;
+    }
+
+    .confirmation-header, 
+    .confirmation-content {
+        margin: 0 !important;
+        padding: 5px !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .confirmation-header, 
+    .confirmation-content {
+        page-break-inside: avoid;
+    }
+
+    .confirmation-title {
+        font-size: 20pt !important;
+    }
+
+    .confirmation-message,
+    .booking-details {
+        font-size: 12pt !important;
+    }
+}
